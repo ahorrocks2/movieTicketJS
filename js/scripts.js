@@ -39,17 +39,17 @@ Ticket.prototype.cost = function() {
 $(document).ready(function() {
 
   $(".new-movie").append('<option id="movie">' + "Miss America" + '</option>' +
-                          '<option>' + "Things Change" + '</option>' +
+                          '<option>' + "Things Change" +'</option>' +
                           '<option>' + "All About My Mother" + '</option>' +
                           '<option>' + "Henry Fool" + '</option>' +
                           '<option>' + "Dead Man" + '</option>');
 
 
-$(".new-time").append('<option id="time">' + 1 + '</option>' +
-                        '<option>' + 2 + '</option>' +
-                        '<option>' + 5 + '</option>' +
-                        '<option>' + 7 + '</option>' +
-                        '<option>' + 9 + '</option>');
+$(".new-time").append('<option id="time">' + 1 + "pm" + '</option>' +
+                        '<option>' + 2 + "pm" + '</option>' +
+                        '<option>' + 5 + "pm" + '</option>' +
+                        '<option>' + 7 + "pm" + '</option>' +
+                        '<option>' + 9 + "pm" + '</option>');
 
 
 $(".new-age").append('<option>' + "Child" + '</option>' +
