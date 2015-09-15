@@ -1,8 +1,3 @@
-// function Movie(title, times) {
-//   this.title = title;
-//   this.times = times;
-// };
-
 function Ticket(movie, time, age) {
   this.movie = movie;
   this.time = time;
@@ -30,39 +25,38 @@ Ticket.prototype.cost = function() {
 };
 
 
-// var newMovie = new Movie("Miss America", [1, 2, 5, 7, 12]);
-// var newMovie2 = new Movie("Things Change", [3, 4, 6, 10]);
-// var newMovie3 = new Movie("All About My Mother", [2, 3, 4, 6]);
-// var newMovie4 = new Movie("Henry Fool", [1, 3, 6]);
-// var newMovie5 = new Movie("Dead Man", [1, 4, 8]);
-
 $(document).ready(function() {
-
-  $(".new-movie").append('<option id="movie">' + "Miss America" + '</option>' +
-                          '<option>' + "Things Change" +'</option>' +
-                          '<option>' + "All About My Mother" + '</option>' +
-                          '<option>' + "Henry Fool" + '</option>' +
-                          '<option>' + "Dead Man" + '</option>');
-
-
-$(".new-time").append('<option id="time">' + 1 + "pm" + '</option>' +
-                        '<option>' + 2 + "pm" + '</option>' +
-                        '<option>' + 5 + "pm" + '</option>' +
-                        '<option>' + 7 + "pm" + '</option>' +
-                        '<option>' + 9 + "pm" + '</option>');
+    $("#new-movie").append('<option value= "Miss America">' + "Miss America" + '</option>' +
+                            '<option value= "Things CHange">' + "Things Change" +'</option>' +
+                            '<option value= "All About My Mother">' + "All About My Mother" + '</option>' +
+                            '<option value= "Henry Fool">' + "Henry Fool" + '</option>' +
+                            '<option value= "Dead Man">' + "Dead Man" + '</option>');
 
 
-$(".new-age").append('<option>' + "Child" + '</option>' +
-                        '<option>' + "Adult" + '</option>' +
-                        '<option>' + "Senior" + '</option>');
+    $("#new-time").append('<option value= 1>' + 1 + "pm" + '</option>' +
+                          '<option value= 2>' + 2 + "pm" + '</option>' +
+                          '<option value= 5>' + 5 + "pm" + '</option>' +
+                          '<option value= 7>' + 7 + "pm" + '</option>' +
+                          '<option value= 9>' + 9 + "pm" + '</option>');
 
+
+    $("#new-age").append('<option value= "Child">' + "Child" + '</option>' +
+                          '<option value= "Adult">' + "Adult" + '</option>' +
+                          '<option value= "Senior">' + "Senior" + '</option>');
+
+
+  $("form#newTicket").submit(function(event) {
+    event.preventDefault();
+
+    var movie = $("#new-movie").val();
+    var time = $("#new-time").val();
+    var age = $("#new-age").val();
+
+    var newTicket = new Ticket(movie, time, age);
+    var cost = newTicket.cost();
+
+    $("div#cost").append("<h1>" + newTicket.movie + "</h1>" +
+                         "<p>" + "Movie Time: " + newTicket.time + "pm" + "</p>" +
+                         "<p>" + "Cost: " + "$" + cost + "</p>");
+  });
 });
-
-// $("form.new-movie").select(function(event) {
-//   event.preventDefault();
-//
-//   var movieName = $("select#movie").val();
-//
-//   var newMovie = new Movie(movieName)
-//
-// });

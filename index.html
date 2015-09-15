@@ -11,22 +11,32 @@
     <div class ='container'>
       <h1>On The Hour Movie Theater</h1>
       <form id="newTicket">
+
         <div class = 'form-group'>
-
           <label for="newMovie">Select a movie:</label>
-          <select class="form-control new-movie">
+          <select class="form-control" id="new-movie">
           </select>
-
-          <label for="newTime">Select an hour:</label>
-          <select class="form-control new-time">
-          </select>
-
-          <label for="newAge">Select Age:</label>
-          <select class="form-control new-age">
-          </select>
-
         </div>
+
+        <div class = 'form-group'>
+          <label for="newTime">Select an hour:</label>
+          <select class="form-control" id="new-time">
+          </select>
+        </div>
+
+        <div class = 'form-group'>
+          <label for="newAge">Select Age:</label>
+          <select class="form-control" id= "new-age">
+          </select>
+        </div>
+
+      <button type="submit" class="btn">Calculate Cost</button>
       </form>
+
+      <div id="cost">
+
+      </div>
+
     </div>
   </body>
 </html>
