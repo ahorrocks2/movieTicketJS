@@ -1,7 +1,7 @@
-function Movie(title, times) {
-  this.title = title;
-  this.times = times;
-};
+// function Movie(title, times) {
+//   this.title = title;
+//   this.times = times;
+// };
 
 function Ticket(movie, time, age) {
   this.movie = movie;
@@ -29,8 +29,40 @@ Ticket.prototype.cost = function() {
   return total;
 };
 
-var newMovie = new Movie("Miss America", [1, 2, 5, 7, 12])
-var newMovie2 = new Movie("Things Change", [3, 4, 6, 10])
-var newMovie3 = new Movie("All About My Mother", [2, 3, 4, 6])
-var newMovie4 = new Movie("Henry Fool", [1, 3, 6])
-var newMovie5 = new Movie("Dead Man", [1, 4, 8])
+
+// var newMovie = new Movie("Miss America", [1, 2, 5, 7, 12]);
+// var newMovie2 = new Movie("Things Change", [3, 4, 6, 10]);
+// var newMovie3 = new Movie("All About My Mother", [2, 3, 4, 6]);
+// var newMovie4 = new Movie("Henry Fool", [1, 3, 6]);
+// var newMovie5 = new Movie("Dead Man", [1, 4, 8]);
+
+$(document).ready(function() {
+
+  $(".new-movie").append('<option id="movie">' + "Miss America" + '</option>' +
+                          '<option>' + "Things Change" + '</option>' +
+                          '<option>' + "All About My Mother" + '</option>' +
+                          '<option>' + "Henry Fool" + '</option>' +
+                          '<option>' + "Dead Man" + '</option>');
+
+
+$(".new-time").append('<option id="time">' + 1 + '</option>' +
+                        '<option>' + 2 + '</option>' +
+                        '<option>' + 5 + '</option>' +
+                        '<option>' + 7 + '</option>' +
+                        '<option>' + 9 + '</option>');
+
+
+$(".new-age").append('<option>' + "Child" + '</option>' +
+                        '<option>' + "Adult" + '</option>' +
+                        '<option>' + "Senior" + '</option>');
+
+});
+
+// $("form.new-movie").select(function(event) {
+//   event.preventDefault();
+//
+//   var movieName = $("select#movie").val();
+//
+//   var newMovie = new Movie(movieName)
+//
+// });
